@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+ 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>postać steve</title>
+    <style>
+      body {
+        background-color: white;
+        color: black;
+        transition: background-color 0.3s, color 0.3s;
+        margin: 0;
+        padding: 0;
+      }
+
+      body.dark-mode {
+        background-color: black;
+        color: white;
+      }
+
+      .theme-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        z-index: 1000;
+      }
+
+      body.dark-mode .theme-button {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .theme-button:hover {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+ 
+  <body>
+    <button class="theme-button" onclick="toggleTheme()">🌙 Ciemny motyw</button>
+    
+    <h1>opis postaci steve!</h1>
+<hr>
+   <h2>Kim jest Steve?</h2>
+
+<p><b>Steve</b> to domyślna postać gracza w Minecraft.<br>
+ Reprezentuje osobę, która eksploruje świat,
+ zbiera surowce, buduje konstrukcje i walczy z potworami.</p>
+  
+
+  <img src="z4xmg666.jpg" alt="Steve" width="400">
+ 
+
+<h2>Jak powstał?</h2>
+
+<p><b>Steve został stworzony przez</b> Markus Persson
+ (znanego jako „Notch”) na początku prac nad Minecraftem
+  w 2009 roku.<br> Początkowo był prostym modelem postaci,
+ który miał służyć jako awatar gracza.</p>
+
+<h1>Co robi?</h1>
+Eksploruje świat gry.
+Wydobywa surowce (np. drewno, kamień, diamenty).
+Buduje domy, miasta i inne konstrukcje.<br>
+Tworzy narzędzia oraz przedmioty.
+Walczy z potworami i przetrwa w trybie survival.
+5 szczególnych cech Steve’a<br><ul>
+
+<li>Kwadratowy wygląd  
+jest zbudowany z bloków, tak jak cały świat Minecrafta.<br></li><br>
+
+<li>ża siła –
+potrafi nosić ogromne ilości materiałów i przedmiotów.<br></li><br>
+
+Wszechstronność –
+ może budować, kopać, walczyć, hodować zwierzęta i
+  tworzyć przedmioty.<br></ul>
+
+Brak ustalonej historii –
+ gracz sam tworzy jego przygody.
+Rozpoznawalny strój – 
+niebieska koszulka, granatowe spodnie i brązowe włosy.
+ 
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const button = document.querySelector('.theme-button');
+      
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        button.textContent = '☀️ Jasny motyw';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        button.textContent = '🌙 Ciemny motyw';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+    
+    // Załaduj zapisany motyw
+    window.addEventListener('DOMContentLoaded', function() {
+      const savedTheme = localStorage.getItem('theme');
+      const button = document.querySelector('.theme-button');
+      
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        button.textContent = '☀️ Jasny motyw';
+      }
+    });
+  </script>
+</body>
+</html>
